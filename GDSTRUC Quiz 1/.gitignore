@@ -1,1 +1,146 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+/*
+
+40pts: Modify the BubbleSort and SelectionSort to sort arrays in descending order
+
+*/
+
+// Part A: Bubble Sort in Descending Order
+
+   int[] numbers = {35,69,1,10,-50,320,63,58};
+
+        System.out.println("Before Bubble Sort:");
+        printArrayElements(numbers);
+
+        bubbleSort(numbers);
+
+        System.out.println("\nAfter Bubble Sort:");
+        printArrayElements(numbers);
+
+    }
+
+    private static void bubbleSort(int[] numbers)
+    {
+        for (int lastSortedIndex = numbers.length - 1; lastSortedIndex > 0; lastSortedIndex--)
+        {
+            for (int i = 0; i < lastSortedIndex; i++)
+            {
+                if (numbers[i] < numbers[i + 1])
+                {
+                    int temp = numbers[1];
+                    numbers[i] = numbers[i + 1];
+                    numbers[i + 1] = temp;
+                }
+            }
+        }
+    }
+
+    private static void printArrayElements(int[] numbers)
+    {
+
+        for (int j : numbers)
+        {
+            System.out.println(j);
+        }
+
+// Part B: Selection Sort in Descending Order
+
+                int numbers[] = {35,69,1,10,-50,320,63,58};
+
+                System.out.println("Before Selection Sort:");
+                printArrayElements(numbers);
+
+                selectionSort(numbers);
+
+                System.out.println("\nAfter Selection Sort:");
+                printArrayElements(numbers);
+
+            }
+
+            private static void selectionSort(int[] numbers)
+
+            {
+                for (int lastSortedIndex = numbers.length - 1; lastSortedIndex > 0; lastSortedIndex--)
+                {
+                    int largestIndex = 0;
+
+                    for (int i = 1; i <= lastSortedIndex; i++)
+                    {
+                        if (numbers[i] < numbers[largestIndex])
+                        {
+                            largestIndex = i;
+                        }
+                    }
+
+                    int temp = numbers[lastSortedIndex];
+                    numbers[lastSortedIndex] = numbers[largestIndex];
+                    numbers[largestIndex] = temp;
+
+                }
+            }
+
+            private static void printArrayElements(int[] numbers)
+            {
+
+                for (int j : numbers)
+                {
+                    System.out.println(j);
+                }
+
+/*
+
+60pts: Modify the Selection Sort to look for the smallest value first and put
+it at the end instead of looking for the largest and putting it in the beginning.
+
+ */
+
+                int numbers[] = {1,8,9,2,6,4,5,7,3,0};
+
+                System.out.println("Before Selection Sort:");
+                printArrayElements(numbers);
+
+                selectionSort(numbers);
+
+                System.out.println("\nAfter Selection Sort:");
+                printArrayElements(numbers);
+
+            }
+
+    private static void selectionSort(int[] numbers)
+
+    {
+        for (int firstSortedIndex = numbers.length - 1; firstSortedIndex > 0; firstSortedIndex--)
+        {
+            int smallestIndex = 0;
+
+            for (int i = 1; i <= firstSortedIndex; i++)
+            {
+                if (numbers[i] < numbers[smallestIndex])
+                {
+                    smallestIndex = i;
+                }
+            }
+
+            int temp = numbers[firstSortedIndex];
+            numbers[firstSortedIndex] = numbers[smallestIndex];
+            numbers[smallestIndex] = temp;
+
+        }
+    }
+
+    private static void printArrayElements(int[] numbers)
+    {
+
+        for (int j : numbers)
+        {
+            System.out.println(j);
+        }
+
+    }
+}
 
